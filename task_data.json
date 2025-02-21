@@ -1,0 +1,307 @@
+{
+  "tasks_array": [
+    {
+      "type": "function",
+      "function": {
+        "name": "format_file",
+        "description": "Format a file using prettier",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string",
+              "description": "File path to format."
+            }
+          },
+          "required": ["source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "count_weekday",
+        "description": "Count the occurrences of a specific weekday in the provided file",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "weekday": {
+              "type": "string",
+              "description": "Day of the week (in English)"
+            },
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the source file. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["weekday", "source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "sort_contacts",
+        "description": "Sort an array of contacts by first or last name",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "order": {
+              "type": "string",
+              "description": "Sorting order, based on name",
+              "enum": ["last_name", "first_name"],
+              "default": "last_name"
+            },
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the source file. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["order", "source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "write_recent_logs",
+        "description": "Write the first line of the **10** most recent `.log` files in the directory `/data/logs/`, most recent first",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "description": "Number of records to be listed"
+            },
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the directory containing log files. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["count", "source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "extract_markdown_titles",
+        "description": "Index Markdown (.md) files in the directory `/data/docs/` and extract their titles",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the directory containing Markdown files. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "extract_email_sender",
+        "description": "Extract the **sender's** email address in an email message from `/data/email.txt`",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the source file. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "extract_card_number",
+        "description": "Extract the 16 digit code from the image",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the source image file. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "similar_comments",
+        "description": "Find the most similar pair of comments",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the source file. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "calculate_ticket_sales",
+        "description": "Calculate ticket sales for a specific item from a database",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "item": {
+              "type": "string",
+              "description": "The type of ticket item to calculate sales for"
+            },
+            "source": {
+              "type": ["string", "null"],
+              "description": "Path to the source file. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["item", "source"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "fetch_data",
+        "description": "Fetch data from an API and save it to a file",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": ["string", "null"],
+              "description": "API URL to fetch data from. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["url"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "clone_and_commit",
+        "description": "Clone a Git repository to a directory and commit the changes",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": ["string", "null"],
+              "description": "Git repository URL to clone. If unavailable, set to null.",
+              "nullable": true
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination directory. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["url"],
+          "additionalProperties": false
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "run_sql_query",
+        "description": "Run a SQL query on a SQLite database",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The SQL query to execute"
+            },
+            "source": {
+              "type": "string",
+              "description": "Path to the source SQLite database file"
+            },
+            "destination": {
+              "type": ["string", "null"],
+              "description": "Path to the destination file to save query result. If unavailable, set to null.",
+              "nullable": true
+            }
+          },
+          "required": ["query", "source"],
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

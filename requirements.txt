@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+requests
+pandas
+openai
+pillow
+markdown2
+beautifulsoup4
+faker
+easyocr
